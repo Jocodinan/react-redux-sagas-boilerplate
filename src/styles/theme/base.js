@@ -6,7 +6,7 @@ const fontSizeBase = '14',
 const base = {
 	fontFamilyBase: 'Roboto, sans-serif',
 	lineHeightBase: '130%',
-	fontSizeBase,
+	fontSizeBase: `${ fontSizeBase }px`,
 	paddingBase: `${ 10 / fontSizeBase }rem`,
 	linkColor,
 	linkHoverColor: darken(0.15, linkColor),
