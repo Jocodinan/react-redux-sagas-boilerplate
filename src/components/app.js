@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import * as actions from '../actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Router from './router';
 
-const App = (props) => <Router {...props} />
+import { ThemeProvider } from 'styled-components';
+import theme from '../styles/theme';
+
+import GlobalStyle from '../styles/global';
+
+const App = (props) => (
+  <ThemeProvider theme={theme}>
+    <Fragment>
+      <GlobalStyle />
+      <Router {...props} />
+    </Fragment>
+  </ThemeProvider>
+);
 
 const mapStateToProps = state => ({
 	...state
