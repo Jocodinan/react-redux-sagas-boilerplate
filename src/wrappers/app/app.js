@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Router from './router';
 
 import { ThemeProvider } from 'styled-components';
-import theme from '../styles/theme';
+import theme from '../../styles/theme';
 
-import GlobalStyle from '../styles/global';
+import GlobalStyle from '../../styles/global';
 
 const App = (props) => (
   <ThemeProvider theme={theme}>

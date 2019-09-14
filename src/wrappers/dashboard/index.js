@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 
-const MainContent = ({ generalStates, getUsers  }) => {
+const MainContent = ({ generalStates, getUsers }) => {
 	useEffect(() => {
-		getUsers();
-	});
+    getUsers();
+	}, []);
     
 	const items = generalStates.get('data').map((item) => {
-		return <li>data</li>
+		return <li>{ `${item.getIn(["name", "first"]) } ${ item.getIn(["name", "last"])}` }</li>
 	})
 
 	return (
 		<main>
 			<ul>
-					{ items }
+				{ items }
 			</ul>
 		</main>
 	);
