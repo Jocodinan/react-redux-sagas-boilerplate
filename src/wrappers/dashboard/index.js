@@ -1,21 +1,18 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-const MainContent = ({ generalStates, getUsers }) => {
+import Header from '../../components/organism/header';
+
+const Dashboard = () => {
+	const dispatch = useDispatch();
+
 	useEffect(() => {
-    getUsers();
-	}, []);
-    
-	const items = generalStates.get('data').map((item) => {
-		return <li>{ `${item.getIn(["name", "first"]) } ${ item.getIn(["name", "last"])}` }</li>
-	})
+		dispatch({ type: "GET_USERS" });
+	});
 
 	return (
-		<main>
-			<ul>
-				{ items }
-			</ul>
-		</main>
+		<Header />
 	);
 };
 
-export default MainContent;
+export default Dashboard;

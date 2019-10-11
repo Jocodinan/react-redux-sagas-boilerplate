@@ -1,4 +1,4 @@
-import { put, takeLatest, all } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 
 function* fetchUsers(){
 	try {
@@ -9,10 +9,6 @@ function* fetchUsers(){
 	}
 }
 
-function* actionWatcher() {
+export function* actionWatcher() {
 	yield takeLatest('GET_USERS', fetchUsers);
-}
-
-export default function* rootSaga() {
-	yield actionWatcher();
 }

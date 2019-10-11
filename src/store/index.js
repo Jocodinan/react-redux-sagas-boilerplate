@@ -2,7 +2,7 @@ import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware, compose } from 'redux';
 import freeze from 'redux-freeze';
 import { reducers } from '../reducers';
-import rootSaga from '../actions/sagas';
+import rootSaga from '../sagas';
 
 let middlewares = [];
 

@@ -1,35 +1,8 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
+const baseConfig = require('./webpack.base.config.js');
 
 module.exports = {
   output: {
-    publicPath: '/'
+    publicPath: "/"
   },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
-      }
-    ]
-  },
-  devServer: {
-    historyApiFallback: true,
-  },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html"
-    })
-  ]
+  ...baseConfig
 };

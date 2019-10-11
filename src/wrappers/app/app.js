@@ -1,7 +1,4 @@
 import React, { Fragment } from 'react';
-import * as actions from '../../actions';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 
 import Router from './router';
 
@@ -10,21 +7,13 @@ import theme from '../../styles/theme';
 
 import GlobalStyle from '../../styles/global';
 
-const App = (props) => (
+const App = () => (
   <ThemeProvider theme={theme}>
     <Fragment>
       <GlobalStyle />
-      <Router {...props} />
+      <Router />
     </Fragment>
   </ThemeProvider>
 );
 
-const mapStateToProps = state => ({
-	...state
-});
-
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(actions, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

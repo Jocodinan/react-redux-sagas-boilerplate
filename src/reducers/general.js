@@ -2,6 +2,7 @@ import { fromJS } from 'immutable';
 
 export function generalStates(state = fromJS({
 	isLoading: false,
+	test: "test",
 	data: []
 }), action) {
 	switch (action.type) {
@@ -12,6 +13,8 @@ export function generalStates(state = fromJS({
 				map.set('data', fromJS([action.data]))
 					.set('isLoading', false)
 			})
+		case "CHANGE TEST":
+			return state.set("test", "newTest");
 		default:
 			return state;
 	}
